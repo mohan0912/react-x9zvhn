@@ -11,20 +11,6 @@ const Header = () => {
             <div>
                 <h1>My Weather Application</h1>
             </div>
-            <nav>
-                <ul>
-                    <li>
-                        <NavLink className="inactive" exact activeClassName="active" to="/">
-                            Home Page
-                        </NavLink>
-                    </li>
-                    <li>
-                        <NavLink className="inactive" exact activeClassName="active" to="/HourlyPage">
-                            Hourly Page
-                        </NavLink>
-                    </li>
-                </ul>
-            </nav>
         </div>
 
     )
