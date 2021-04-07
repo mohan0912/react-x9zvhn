@@ -15,7 +15,6 @@ const HourlyPage = () => {
 
   const classes = useStyles();
 
-  const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [Weather, setWeather] = useState([]);
   const [city, setCity] = useState();
@@ -38,7 +37,6 @@ const HourlyPage = () => {
       .then(response =>
         response.json().catch(err => {
           setIsLoaded(true);
-          setError(true);
           console.log(`'${err}' happened!`);
           return {};
         })
@@ -60,7 +58,6 @@ const HourlyPage = () => {
       .then(response =>
         response.json().catch(err => {
           setIsLoaded(true);
-          setError(true);
           console.err(`'${err}' happened!`);
           return {};
         })
@@ -74,11 +71,7 @@ const HourlyPage = () => {
 
   return (
     <div className={classes.root}>
-      <TextField
-        id="standard-basic"
-        label="City Name"
-        onChange={handleChangesCity}
-      />
+      <TextField id="city" label="City Name" onChange={handleChangesCity} />
       <Button
         variant="contained"
         color="primary"
@@ -86,11 +79,7 @@ const HourlyPage = () => {
       >
         Show
       </Button>
-      <TextField
-        id="standard-basic"
-        label="PinCode"
-        onChange={handleChangesPinCode}
-      />
+      <TextField id="zipCode" label="PinCode" onChange={handleChangesPinCode} />
       <Button
         variant="contained"
         color="primary"

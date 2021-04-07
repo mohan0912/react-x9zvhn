@@ -16,7 +16,7 @@ const HomePage = () => {
 
       const classes = useStyles();
 
-    const [error, setError] = useState(null);
+
     const [isLoaded, setIsLoaded] = useState(false);
     const [Weather, setWeather] = useState([]);
     const [city, setCity] = useState();
@@ -34,7 +34,6 @@ const HomePage = () => {
             .then((response) => response.json()
                 .catch(err => {
                     setIsLoaded(true);
-                    setError(true);
                     console.log(`'${err}' happened!`);
                     return {};
                 }))
